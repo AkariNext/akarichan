@@ -6,8 +6,8 @@ from src.shared.interfaces.repositories.grant_role_repository import GrantRoleRe
 
 
 class GrantRoleRepository(GrantRoleRepositoryABC):
-    async def link(self, guild_id: str, emoji: str, role_id: str) -> None:
-        new_grant_role = GrantRole(role_id=role_id, emoji=emoji, guild_id=guild_id)
+    async def link(self, guild_id: int, emoji_id: int, role_id: int) -> None:
+        new_grant_role = GrantRole(role_id=role_id, emoji_id=emoji_id, guild_id=guild_id)
         with Session(engine) as session:
             session.add(new_grant_role)
             session.commit()

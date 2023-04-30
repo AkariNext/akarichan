@@ -4,6 +4,7 @@ from sqlalchemy import MetaData, engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
+from src.shared.domain.grant_role.grant_role_entity import GrantRole
 
 from src.shared.domain.user.user_entity import User
 
@@ -20,7 +21,7 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadatas: list[MetaData] = [User.metadata]
+target_metadatas: list[MetaData] = [User.metadata, GrantRole.metadata]
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

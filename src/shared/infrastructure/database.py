@@ -1,4 +1,3 @@
-from sqlmodel import create_engine
+from prisma import Prisma
 
-
-engine = create_engine('sqlite:///data.db')
+prisma = Prisma()
